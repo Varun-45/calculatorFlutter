@@ -17,3 +17,8 @@ class MyApp extends StatelessWidget {
     ); // MaterialApp
   }
 }
+
+
+// to solve -->>> size exception => display ERROR after userinput.length > 48
+// to solve -->>> Math Exception Handling
+// add thememode

@@ -7,8 +7,8 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      "Calculator".text.xl5.color(const Color(0xffecb7ce)).make(),
-      "by dLights".text.xl2.color(const Color(0xff95a9e4)).make(),
+      "Calculator".text.xl3.color(const Color(0xffecb7ce)).make().px4(),
+      "by Vaibhav".text.lg.color(const Color(0xff95a9e4)).make().px4(),
     ]);
   }
 }

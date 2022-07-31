@@ -23,13 +23,13 @@ class MyButtons extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         onTap: buttonTapped,
         child: Container(
-          width: 70,
-          height: 70,
+          width: 80,
+          height: 80,
           alignment: Alignment.center,
           child: Text(
             buttonText,
             style: TextStyle(
-              fontSize: 30,
+              fontSize: 32,
               color: buttonTextColor,
             ),
           ),
