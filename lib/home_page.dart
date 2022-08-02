@@ -381,6 +381,7 @@ String evaluate(String userInput) {
     String result = userInput;
     result = userInput.replaceAll('÷', '/');
     result = result.replaceAll('×', '*');
+    result = result.replaceAll('%', '(/100)*');
     Parser p = Parser();
     Expression exp = p.parse(result);
     ContextModel cm = ContextModel();
