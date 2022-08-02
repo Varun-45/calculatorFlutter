@@ -1,3 +1,4 @@
+import 'package:calculator_bana_rahe_hai/utils/themes.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -11,14 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      themeMode: ThemeMode.system,
+      theme: MyTheme.lightTheme,
+      darkTheme: MyTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const HomePage(),
     ); // MaterialApp
   }
 }
-
-
-// to solve -->>> size exception => display ERROR after userinput.length > 48
-// to solve -->>> Math Exception Handling
-// add thememode

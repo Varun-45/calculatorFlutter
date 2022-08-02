@@ -1,5 +1,7 @@
 import 'package:calculator_bana_rahe_hai/buttons.dart';
 import 'package:calculator_bana_rahe_hai/header.dart';
+import 'package:calculator_bana_rahe_hai/utils/own_theme_fields.dart';
+import 'package:calculator_bana_rahe_hai/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -17,9 +19,7 @@ class _HomePageState extends State<HomePage> {
   final cColor = const Color(0xffda322a);
   final numColor = const Color(0xffecb7ce);
   final opColor = const Color(0xff95a9e4);
-  final butColor = const Color(0xff171717);
   var inpColor = const Color(0xffecb7ce);
-
   final List<String> buttons = [
     'C',
     '⌫',
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: context.backgroundColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MyButtons(
-                    buttonColor: butColor,
+                    buttonColor: ownTheme(context).butColor,
                     buttonText: buttons[0],
                     buttonTextColor: cColor,
                     buttonTapped: () {
@@ -96,9 +96,9 @@ class _HomePageState extends State<HomePage> {
                     }),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[1],
-                  buttonTextColor: opColor,
+                  buttonTextColor: ownTheme(context).opColor,
                   buttonTapped: () {
                     if (userInput.isNotEmpty) {
                       setState(() {
@@ -111,9 +111,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[2],
-                  buttonTextColor: opColor,
+                  buttonTextColor: ownTheme(context).opColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[2];
@@ -123,9 +123,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[3],
-                  buttonTextColor: opColor,
+                  buttonTextColor: ownTheme(context).opColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[3];
@@ -140,9 +140,9 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[4],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[4];
@@ -152,9 +152,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[5],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[5];
@@ -164,9 +164,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[6],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[6];
@@ -176,9 +176,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[7],
-                  buttonTextColor: opColor,
+                  buttonTextColor: ownTheme(context).opColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[7];
@@ -193,9 +193,9 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[8],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[8];
@@ -205,9 +205,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[9],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[9];
@@ -217,9 +217,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[10],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[10];
@@ -229,9 +229,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[11],
-                  buttonTextColor: opColor,
+                  buttonTextColor: ownTheme(context).opColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[11];
@@ -246,9 +246,9 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[12],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[12];
@@ -258,9 +258,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[13],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[13];
@@ -270,9 +270,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[14],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[14];
@@ -282,9 +282,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[15],
-                  buttonTextColor: opColor,
+                  buttonTextColor: ownTheme(context).opColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[15];
@@ -299,9 +299,9 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MyButtons(
-                    buttonColor: butColor,
+                    buttonColor: ownTheme(context).butColor,
                     buttonText: buttons[16],
-                    buttonTextColor: numColor,
+                    buttonTextColor: ownTheme(context).numColor,
                     buttonTapped: () {
                       setState(() {
                         if (userInput[0] == '-') {
@@ -314,9 +314,9 @@ class _HomePageState extends State<HomePage> {
                     }),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[17],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[17];
@@ -326,9 +326,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                  buttonColor: butColor,
+                  buttonColor: ownTheme(context).butColor,
                   buttonText: buttons[18],
-                  buttonTextColor: numColor,
+                  buttonTextColor: ownTheme(context).numColor,
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[18];
@@ -338,17 +338,19 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 12),
                 MyButtons(
-                    buttonColor: opColor,
+                    buttonColor: ownTheme(context).opColor,
                     buttonText: buttons[19],
-                    buttonTextColor: butColor,
+                    buttonTextColor: ownTheme(context).butColor,
                     buttonTapped: () {
                       setState(() {
                         result = evaluate(userInput);
-                        inpColor = butColor;
+                        // inpColor = ;
+                        userInput = result;
                       });
                     }),
               ],
-            )
+            ),
+            const SizedBox(height: 8),
           ],
         ),
       ),
@@ -357,16 +359,20 @@ class _HomePageState extends State<HomePage> {
 }
 
 String evaluate(String userInput) {
-  String result = userInput;
-  result = userInput.replaceAll('÷', '/');
-  result = result.replaceAll('×', '*');
-  Parser p = Parser();
-  Expression exp = p.parse(result);
-  ContextModel cm = ContextModel();
-  num eval = exp.evaluate(EvaluationType.REAL, cm);
-  result = eval.toString();
-  if (eval == int.parse(result.split(".").first)) {
-    result = result.split(".").first;
+  try {
+    String result = userInput;
+    result = userInput.replaceAll('÷', '/');
+    result = result.replaceAll('×', '*');
+    Parser p = Parser();
+    Expression exp = p.parse(result);
+    ContextModel cm = ContextModel();
+    num eval = exp.evaluate(EvaluationType.REAL, cm);
+    result = eval.toString();
+    if (eval == int.parse(result.split(".").first)) {
+      result = result.split(".").first;
+    }
+    return result;
+  } catch (e) {
+    return "Math Error";
   }
-  return result;
 }
