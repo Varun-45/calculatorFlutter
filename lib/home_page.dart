@@ -16,10 +16,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var userInput = "";
   var result = "";
+  bool temp = false;
   final cColor = const Color(0xffda322a);
-  final numColor = const Color(0xffecb7ce);
-  final opColor = const Color(0xff95a9e4);
-  var inpColor = const Color(0xffecb7ce);
   final List<String> buttons = [
     'C',
     '⌫',
@@ -63,7 +61,16 @@ class _HomePageState extends State<HomePage> {
               height: 20,
               padding: const EdgeInsets.only(right: 32, left: 32),
               alignment: Alignment.centerRight,
-              child: userInput.text.size(20).color(inpColor).make(),
+              child: userInput.text
+                  .size(20)
+                  .color(temp
+                      ? ownTheme(context).butColor
+                      : userInput.isEmpty
+                          ? ownTheme(context).numColor
+                          : isOperator((userInput[userInput.length - 1]))
+                              ? ownTheme(context).opColor
+                              : ownTheme(context).numColor)
+                  .make(),
             ),
             const SizedBox(height: 16),
             Container(
@@ -71,7 +78,11 @@ class _HomePageState extends State<HomePage> {
               height: 50,
               padding: const EdgeInsets.only(right: 32, left: 32),
               alignment: Alignment.centerRight,
-              child: result.text.size(40).color(numColor).make().px4(),
+              child: result.text
+                  .size(40)
+                  .color(ownTheme(context).numColor)
+                  .make()
+                  .px4(),
             ),
             const Divider(
               color: Colors.white,
@@ -91,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         userInput = '';
                         result = '0';
-                        inpColor = cColor;
+                        temp = false;
                       });
                     }),
                 const SizedBox(width: 12),
@@ -104,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         userInput =
                             userInput.substring(0, userInput.length - 1);
-                        inpColor = opColor;
+                        temp = false;
                       });
                     }
                   },
@@ -117,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[2];
-                      inpColor = opColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -129,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[3];
-                      inpColor = opColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -146,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[4];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -158,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[5];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -170,7 +181,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[6];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -182,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[7];
-                      inpColor = opColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -199,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[8];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -211,7 +222,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[9];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -223,7 +234,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[10];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -235,7 +246,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[11];
-                      inpColor = opColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -252,7 +263,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[12];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -264,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[13];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -276,7 +287,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[14];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -288,7 +299,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[15];
-                      inpColor = opColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -309,7 +320,7 @@ class _HomePageState extends State<HomePage> {
                         } else {
                           userInput = '-$userInput';
                         }
-                        inpColor = numColor;
+                        temp = false;
                       });
                     }),
                 const SizedBox(width: 12),
@@ -320,7 +331,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[17];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -332,7 +343,7 @@ class _HomePageState extends State<HomePage> {
                   buttonTapped: () {
                     setState(() {
                       userInput += buttons[18];
-                      inpColor = numColor;
+                      temp = false;
                     });
                   },
                 ),
@@ -344,7 +355,7 @@ class _HomePageState extends State<HomePage> {
                     buttonTapped: () {
                       setState(() {
                         result = evaluate(userInput);
-                        // inpColor = ;
+                        temp = true;
                         userInput = result;
                       });
                     }),
@@ -356,6 +367,13 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+bool isOperator(dynamic x) {
+  if (x == '+' || x == '-' || x == '×' || x == '÷' || x == '%') {
+    return true;
+  }
+  return false;
 }
 
 String evaluate(String userInput) {
